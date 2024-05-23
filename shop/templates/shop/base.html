@@ -23,6 +23,7 @@
                   <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
                   <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
                   <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                  <li><a href="#" class="nav-link px-2 text-white">{{ user.username }}</a></li>
                 </ul>
         
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -30,8 +31,18 @@
                 </form>
         
                 <div class="text-end">
-                  <button type="button" class="btn btn-outline-light me-2">Login</button>
-                  <button type="button" class="btn btn-warning me-2">Sign-up</button>
+                  {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'account:logout' %}">logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'account:login' %}">login</a>
+                    </li> 
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'account:register' %}">register</a>
+                    </li> 
+                  {% endif %}
                   <a class="btn btn-outline-light position-relative" href="{% url 'cart:cart_detail' %}">
                     <i class="bi bi-cart"></i>
                     {% with total_items=cart|length %}
@@ -85,3 +96,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+

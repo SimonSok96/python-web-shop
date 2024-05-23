@@ -1,0 +1,37 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Checkout{% endblock  %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+            <h1>Checkout</h1>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="mb-3">
+                        {{ field.errors }}
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <p><input type="submit" value="Submit order" class="btn btn-warning"></p>
+            </form>
+        </div>
+        <div class="col-4 mt-3 border border-1 rounded">
+            <h3>Your order</h3>
+            <ul class="list-group">
+                {% for item in cart %}
+                    <li class="list-group-item">
+                        {{ item.quantity }} x {{ item.product.name }} &ndash; {{item.total_price }} ₴
+                    </li>
+                {% endfor %}
+            </ul>
+            {% if cart.coupon %}
+                <p class="mt-2">Total: {{ cart.get_total_price|floatformat:2 }} ₴</p>
+                <p>"{{ cart.coupon.code }}" coupon ({{ cart.coupon.discount }}% off)</p>
+                <p>-{{ cart.get_discount|floatformat:2 }} ₴</p>
+            {% endif %}
+            <p class="mt-2 fw-bold">Total: {{ cart.get_total_price_after_discount }} ₴</p>
+        </div>
+    </div>
+{% endblock content %}

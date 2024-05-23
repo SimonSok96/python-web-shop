@@ -1,10 +1,16 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+from django.contrib.auth.models import User
+from decimal import Decimal
+from coupons.models import Coupon
 from shop.models import Product
 
 # Create your models here.
 
 
 class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -13,6 +19,14 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
     paid = models.BooleanField(default=False)
+    coupon = models.ForeignKey(
+        Coupon,
+        related_name='orders',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    discount = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     
     class Meta:
         ordering = ['-created']
@@ -23,8 +37,18 @@ class Order(models.Model):
     def __str__(self):
         return f"Order {self.id}"
     
-    def get_total_cost(self):
+    def get_total_cost_before_discount(self):
         return sum(item.get_cost() for item in self.items.all())
+    
+    def get_discount(self):
+        total_cost = self.get_total_cost_before_discount()
+        if self.discount:
+            return total_cost * {self.discount / Decimal(100)}
+        return Decimal(0)
+    
+    def det_total_cost(self):
+        total_cost = self.get_total_cost_before_discount()
+        return total_cost - self.discount
     
     
 class OrderItem(models.Model):
