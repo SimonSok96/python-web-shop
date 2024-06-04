@@ -13,6 +13,8 @@ def product_list(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
+    if query := request.GET.get('search'):
+        products = products.filter(name__contains=query) | products.filter(description__contains=query)
     return render(request, 
                   'shop/product/list.html', 
                   {'category': category,
