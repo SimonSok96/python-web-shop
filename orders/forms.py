@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from .models import Order
 
@@ -7,6 +8,13 @@ class OrderCreateForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ['first_name', 'last_name', 'email', 'address', 'city']
+        labels = {
+            'first_name': _('First name'), 
+            'last_name': _('Last name'), 
+            'email': "e-mail", 
+            'address': _('Address'), 
+            'city': _('City'),
+            }
         
     def __init__(self, *args, **kwargs):
         user = kwargs.pop("user", None)

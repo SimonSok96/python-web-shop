@@ -1,11 +1,12 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 
 {% block title %}Checkout{% endblock  %}
 
 {% block content %}
     <div class="row">
         <div class="col-8">
-            <h1>Checkout</h1>
+            <h1>{% trans "Checkout" %}</h1>
             <form method="post">
                 {% csrf_token %}
                 {% for field in form %}
