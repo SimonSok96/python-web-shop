@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +44,7 @@
                       <a class="nav-link" href="{% url 'account:register' %}">register</a>
                     </li> 
                   {% endif %}
+                  {% comment %} cart {% endcomment %}
                   <a class="btn btn-outline-light position-relative" href="{% url 'cart:cart_detail' %}">
                     <i class="bi bi-cart"></i>
                     {% with total_items=cart|length %}
@@ -53,6 +55,21 @@
                       {% endif %}
                     {% endwith %}
                   </a>
+                  {% comment %} language {% endcomment %}
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% get_language_info_list for LANGUAGES as languages %}
+                  <div class='d-inline-block ms-2'>
+                    <form action="{% url 'set_language' %}" method='post'>
+                      {% csrf_token %}
+                      {% for language in languages %}
+                        <button class="btn {% if language.code == LANGUAGE_CODE %}btn-outline-warning{% else %}btn-outline-light{% endif %}" 
+                        name="language" value="{{ language.code }}">
+                          {{ language.code|upper }}
+                        </button>
+                      {% endfor %}
+                    </form>
+                  </div>
                 </div>
             </div>
           </header>
