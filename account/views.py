@@ -2,6 +2,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
+from django.utils.translation import gettext as _
 # Create your views here.
 
 def login_user(request):
@@ -11,17 +12,17 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ("You have succsessfully loged in"))
+            messages.success(request, (_("You have succsessfully loged in")))
             return redirect("shop:product_list")
         else:
-            messages.success(request, ("Wrong password or username"))
+            messages.success(request, (_("Wrong password or username")))
             return redirect("login")
     else:
         return render(request, 'login.html')
     
 def logout_user(request):
     logout(request)
-    messages.success(request, ("You have succsessfully loged out"))
+    messages.success(request, (_("You have succsessfully loged out")))
     return redirect("shop:product_list")
     
 def register(request):
@@ -34,6 +35,6 @@ def register(request):
             password1 = form.cleaned_data["password1"] 
             user = authenticate(request, username=username, password=password1)
             login(request, user)
-            messages.success(request, ("You have sucsessfuly sing in"))
+            messages.success(request, (_("You have sucsessfuly sing in")))
             return redirect("shop:product_list")
     return render(request, 'register.html', {'form': form})

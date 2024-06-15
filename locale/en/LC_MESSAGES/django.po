@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 13:10+0200\n"
+"POT-Creation-Date: 2024-06-15 14:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,121 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: account/templates/login.html:6
+msgid "Enter your username"
+msgstr ""
+
+#: account/templates/login.html:9
+msgid "Enter your password"
+msgstr ""
+
+#: account/templates/login.html:11 account/templates/register.html:9
+msgid "Submit"
+msgstr ""
+
+#: account/templates/register.html:4
+msgid "Register"
+msgstr ""
+
+#: account/views.py:15
+msgid "You have succsessfully loged in"
+msgstr ""
+
+#: account/views.py:18
+msgid "Wrong password or username"
+msgstr ""
+
+#: account/views.py:25
+msgid "You have succsessfully loged out"
+msgstr ""
+
+#: account/views.py:38
+msgid "You have sucsessfuly sing in"
+msgstr ""
+
+#: cart/forms.py:7
+msgid "Quantity:"
+msgstr ""
+
+#: cart/templates/cart/detail.html:6 cart/templates/cart/detail.html:10
+msgid "Your shopping cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:14
+msgid "Image"
+msgstr ""
+
+#: cart/templates/cart/detail.html:15
+msgid "Product"
+msgstr ""
+
+#: cart/templates/cart/detail.html:16
+msgid "Quantity"
+msgstr ""
+
+#: cart/templates/cart/detail.html:17 cart/templates/cart/detail.html:43
+msgid "Remove"
+msgstr ""
+
+#: cart/templates/cart/detail.html:18
+msgid "Unit price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:19
+msgid "Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:55
+msgid "Subtotal"
+msgstr ""
+
+#: cart/templates/cart/detail.html:61
+#, python-format
+msgid ""
+"\n"
+"                            \"%(cart.coupon.code)s\" coupon "
+"(%(cart.coupon.discount)s%% off)\n"
+"                        "
+msgstr ""
+
+#: cart/templates/cart/detail.html:70
+msgid "Total"
+msgstr ""
+
+#: cart/templates/cart/detail.html:84
+msgid "Continue shopping"
+msgstr ""
+
+#: cart/templates/cart/detail.html:85
+#: orders/templates/orders/order/create.html:4
+#: orders/templates/orders/order/create.html:9
+msgid "Checkout"
+msgstr ""
+
+#: core/urls.py:26
+msgid "cart/"
+msgstr ""
+
+#: core/urls.py:27
+msgid "orders/"
+msgstr ""
+
+#: core/urls.py:28
+msgid "coupons/"
+msgstr ""
+
+#: core/urls.py:29
+msgid "account/"
+msgstr ""
+
+#: coupons/forms.py:6
+msgid "Apply a coupon:"
+msgstr ""
+
+#: coupons/models.py:13
+msgid "Percentage value (0 to 100)"
+msgstr ""
 
 #: orders/forms.py:12
 msgid "First name"
@@ -34,6 +149,110 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:9
-msgid "Checkout"
+#: orders/models.py:39
+msgid "Order %(id)"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:18
+msgid "Submit order"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:22
+msgid "Your order"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:31
+#: orders/templates/orders/order/create.html:35
+msgid "Total: "
+msgstr ""
+
+#: orders/templates/orders/order/create.html:32
+msgid "coupon"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:32
+msgid "off"
+msgstr ""
+
+#: orders/templates/orders/order/created.html:4
+#: orders/templates/orders/order/created.html:7
+msgid "Thank you"
+msgstr ""
+
+#: orders/templates/orders/order/created.html:8
+#, python-format
+msgid ""
+" \n"
+"        Your order has been successfully copleted. Your order number is "
+"<strong>%(id)s</strong>.\n"
+"    "
+msgstr ""
+
+#: orders/urls.py:9
+msgid "create"
+msgstr ""
+
+#: shop/models.py:16
+msgid "category"
+msgstr ""
+
+#: shop/models.py:17
+msgid "categories"
+msgstr ""
+
+#: shop/models.py:44
+msgid "product"
+msgstr ""
+
+#: shop/models.py:45
+msgid "products"
+msgstr ""
+
+#: shop/templates/shop/base.html:22 shop/templates/shop/base.html:107
+msgid "Home"
+msgstr ""
+
+#: shop/templates/shop/base.html:23 shop/templates/shop/base.html:108
+msgid "Features"
+msgstr ""
+
+#: shop/templates/shop/base.html:24 shop/templates/shop/base.html:109
+msgid "Pricing"
+msgstr ""
+
+#: shop/templates/shop/base.html:25 shop/templates/shop/base.html:110
+msgid "FAQs"
+msgstr ""
+
+#: shop/templates/shop/base.html:26 shop/templates/shop/base.html:111
+msgid "About"
+msgstr ""
+
+#: shop/templates/shop/base.html:37
+msgid "logout"
+msgstr ""
+
+#: shop/templates/shop/base.html:41
+msgid "login"
+msgstr ""
+
+#: shop/templates/shop/base.html:44
+msgid "register"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:20
+msgid "Add to cart"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:6
+#: shop/templates/shop/product/list.html:29
+msgid "Products"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:12
+msgid "Categories"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:40
+msgid "Open"
 msgstr ""

@@ -8,18 +8,136 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-08 13:10+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2024-06-15 14:22+0300\n"
+"PO-Revision-Date: 2024-06-15 14:23+0300\n"
+"Last-Translator: BOBOB test <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
-"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
-"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
-"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: account/templates/login.html:6
+msgid "Enter your username"
+msgstr "Введіть ваще ім'я"
+
+#: account/templates/login.html:9
+msgid "Enter your password"
+msgstr "Введіть ваш пароль "
+
+#: account/templates/login.html:11 account/templates/register.html:9
+msgid "Submit"
+msgstr "Підтвердити"
+
+#: account/templates/register.html:4
+msgid "Register"
+msgstr "Зарееструватися"
+
+#: account/views.py:15
+msgid "You have succsessfully loged in"
+msgstr "Ви успішно увійшли в систему"
+
+#: account/views.py:18
+msgid "Wrong password or username"
+msgstr "Невірний пароль або ім'я"
+
+#: account/views.py:25
+msgid "You have succsessfully loged out"
+msgstr "Ви успішно вийшли"
+
+#: account/views.py:38
+msgid "You have sucsessfuly sing in"
+msgstr "Ви  успішно зарееструвались "
+
+#: cart/forms.py:7
+#, fuzzy
+#| msgid "Quantity"
+msgid "Quantity:"
+msgstr "Кількість"
+
+#: cart/templates/cart/detail.html:6 cart/templates/cart/detail.html:10
+msgid "Your shopping cart"
+msgstr "Ваша корзина"
+
+#: cart/templates/cart/detail.html:14
+msgid "Image"
+msgstr "Картинка"
+
+#: cart/templates/cart/detail.html:15
+msgid "Product"
+msgstr "Товар"
+
+#: cart/templates/cart/detail.html:16
+msgid "Quantity"
+msgstr "Кількість"
+
+#: cart/templates/cart/detail.html:17 cart/templates/cart/detail.html:43
+msgid "Remove"
+msgstr "Видалити"
+
+#: cart/templates/cart/detail.html:18
+msgid "Unit price"
+msgstr "Ціна за товар"
+
+#: cart/templates/cart/detail.html:19
+msgid "Price"
+msgstr "Ціна"
+
+#: cart/templates/cart/detail.html:55
+msgid "Subtotal"
+msgstr "Під ітог "
+
+#: cart/templates/cart/detail.html:61
+#, python-format
+msgid ""
+"\n"
+"                            \"%(cart.coupon.code)s\" coupon (%(cart.coupon.discount)s%% off)\n"
+"                        "
+msgstr ""
+"\n"
+"\"%(cart.coupon.code)s\" купон (%(cart.coupon.discount)s%% знижка)"
+
+#: cart/templates/cart/detail.html:70
+msgid "Total"
+msgstr "Всього"
+
+#: cart/templates/cart/detail.html:84
+msgid "Continue shopping"
+msgstr "Продовжити покупки"
+
+#: cart/templates/cart/detail.html:85
+#: orders/templates/orders/order/create.html:4
+#: orders/templates/orders/order/create.html:9
+msgid "Checkout"
+msgstr "Замовити"
+
+#: core/urls.py:26
+msgid "cart/"
+msgstr "кошик/"
+
+#: core/urls.py:27
+msgid "orders/"
+msgstr "замовлення/"
+
+#: core/urls.py:28
+#, fuzzy
+#| msgid "coupon"
+msgid "coupons/"
+msgstr "купон"
+
+#: core/urls.py:29
+msgid "account/"
+msgstr "акаунт/"
+
+#: coupons/forms.py:6
+msgid "Apply a coupon:"
+msgstr "Застосувати купон"
+
+#: coupons/models.py:13
+msgid "Percentage value (0 to 100)"
+msgstr "Відсоткова знижка (від 0 до 100)"
 
 #: orders/forms.py:12
 msgid "First name"
@@ -37,6 +155,111 @@ msgstr "Адреса"
 msgid "City"
 msgstr "Місто"
 
-#: orders/templates/orders/order/create.html:9
-msgid "Checkout"
-msgstr "Замовити"
+#: orders/models.py:39
+msgid "Order %(id)"
+msgstr "Замовлення %(id)"
+
+#: orders/templates/orders/order/create.html:18
+msgid "Submit order"
+msgstr "Підтврдити замовлення"
+
+#: orders/templates/orders/order/create.html:22
+msgid "Your order"
+msgstr "Ваше замовлення "
+
+#: orders/templates/orders/order/create.html:31
+#: orders/templates/orders/order/create.html:35
+msgid "Total: "
+msgstr "Сумарна вартість "
+
+#: orders/templates/orders/order/create.html:32
+msgid "coupon"
+msgstr "купон"
+
+#: orders/templates/orders/order/create.html:32
+msgid "off"
+msgstr "знижка"
+
+#: orders/templates/orders/order/created.html:4
+#: orders/templates/orders/order/created.html:7
+msgid "Thank you"
+msgstr "Дякуемо!"
+
+#: orders/templates/orders/order/created.html:8
+#, python-format
+msgid ""
+" \n"
+"        Your order has been successfully copleted. Your order number is <strong>%(id)s</strong>.\n"
+"    "
+msgstr ""
+"Ваше замовлення успішно прийнято. Номер вашого замовлення "
+"<strong>%(id)s</strong>."
+
+#: orders/urls.py:9
+msgid "create"
+msgstr "створити"
+
+#: shop/models.py:16
+msgid "category"
+msgstr "категорія"
+
+#: shop/models.py:17
+msgid "categories"
+msgstr "категорії"
+
+#: shop/models.py:44
+msgid "product"
+msgstr "товар"
+
+#: shop/models.py:45
+msgid "products"
+msgstr "товари"
+
+#: shop/templates/shop/base.html:22 shop/templates/shop/base.html:107
+msgid "Home"
+msgstr "Домашня сторінка"
+
+#: shop/templates/shop/base.html:23 shop/templates/shop/base.html:108
+msgid "Features"
+msgstr "функції"
+
+#: shop/templates/shop/base.html:24 shop/templates/shop/base.html:109
+msgid "Pricing"
+msgstr "Ціноутворення"
+
+#: shop/templates/shop/base.html:25 shop/templates/shop/base.html:110
+msgid "FAQs"
+msgstr "ЧЗП"
+
+#: shop/templates/shop/base.html:26 shop/templates/shop/base.html:111
+msgid "About"
+msgstr "Інформація"
+
+#: shop/templates/shop/base.html:37
+msgid "logout"
+msgstr "Вийти"
+
+#: shop/templates/shop/base.html:41
+msgid "login"
+msgstr "Війти"
+
+#: shop/templates/shop/base.html:44
+msgid "register"
+msgstr "зарееструватися"
+
+#: shop/templates/shop/product/detail.html:20
+msgid "Add to cart"
+msgstr "Додати до кошика"
+
+#: shop/templates/shop/product/list.html:6
+#: shop/templates/shop/product/list.html:29
+msgid "Products"
+msgstr "Товари"
+
+#: shop/templates/shop/product/list.html:12
+msgid "Categories"
+msgstr "Категорії"
+
+#: shop/templates/shop/product/list.html:40
+msgid "Open"
+msgstr "Відкрити"

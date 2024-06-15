@@ -19,11 +19,11 @@
                 </a>
         
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                  <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                  <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                  <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                  <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                  <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                  <li><a href="#" class="nav-link px-2 text-secondary">{% trans "Home" %}</a></li>
+                  <li><a href="#" class="nav-link px-2 text-white">{% trans "Features" %}</a></li>
+                  <li><a href="#" class="nav-link px-2 text-white">{% trans "Pricing" %}</a></li>
+                  <li><a href="#" class="nav-link px-2 text-white">{% trans "FAQs" %}</a></li>
+                  <li><a href="#" class="nav-link px-2 text-white">{% trans "About" %}</a></li>
                   <li><a href="#" class="nav-link px-2 text-white">{{ user.username }}</a></li>
                 </ul>
         
@@ -34,14 +34,14 @@
                 <div class="text-end">
                   {% if user.is_authenticated %}
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account:logout' %}">logout</a>
+                      <a class="nav-link" href="{% url 'account:logout' %}">{% trans "logout" %}</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account:login' %}">login</a>
+                      <a class="nav-link" href="{% url 'account:login' %}">{% trans "login" %}</a>
                     </li> 
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account:register' %}">register</a>
+                      <a class="nav-link" href="{% url 'account:register' %}">{% trans "register" %}</a>
                     </li> 
                   {% endif %}
                   {% comment %} cart {% endcomment %}
@@ -102,11 +102,11 @@
           </a>
       
           <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">{% trans "Home" %}</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">{% trans "Features" %}</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">{% trans "Pricing" %}</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">{% trans "FAQs" %}</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">{% trans "About" %}</a></li>
           </ul>
         </footer>
     </div>

@@ -1,7 +1,7 @@
 {% extends "shop/base.html" %}
 {% load i18n %}
 
-{% block title %}Checkout{% endblock  %}
+{% block title %}{% trans 'Checkout' %}{% endblock  %}
 
 {% block content %}
     <div class="row">
@@ -15,11 +15,11 @@
                         {{ field }}
                     </div>
                 {% endfor %}
-                <p><input type="submit" value="Submit order" class="btn btn-warning"></p>
+                <p><input type="submit" value="{% trans 'Submit order' %}" class="btn btn-warning"></p>
             </form>
         </div>
         <div class="col-4 mt-3 border border-1 rounded">
-            <h3>Your order</h3>
+            <h3>{% trans 'Your order' %}</h3>
             <ul class="list-group">
                 {% for item in cart %}
                     <li class="list-group-item">
@@ -28,11 +28,11 @@
                 {% endfor %}
             </ul>
             {% if cart.coupon %}
-                <p class="mt-2">Total: {{ cart.get_total_price|floatformat:2 }} ₴</p>
-                <p>"{{ cart.coupon.code }}" coupon ({{ cart.coupon.discount }}% off)</p>
+                <p class="mt-2">{% trans 'Total: ' %}{{ cart.get_total_price|floatformat:2 }} ₴</p>
+                <p>"{{ cart.coupon.code }}" {% trans 'coupon' %} ({{ cart.coupon.discount }}% {% trans 'off' %})</p>
                 <p>-{{ cart.get_discount|floatformat:2 }} ₴</p>
             {% endif %}
-            <p class="mt-2 fw-bold">Total: {{ cart.get_total_price_after_discount }} ₴</p>
+            <p class="mt-2 fw-bold">{% trans 'Total: ' %}{{ cart.get_total_price_after_discount }} ₴</p>
         </div>
     </div>
 {% endblock content %}

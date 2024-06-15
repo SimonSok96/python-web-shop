@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 from django.contrib.auth.models import User
+from django.utils.translation import gettext as _
 from decimal import Decimal
 from coupons.models import Coupon
 from shop.models import Product
@@ -35,7 +36,7 @@ class Order(models.Model):
         ]
         
     def __str__(self):
-        return f"Order {self.id}"
+        return _("Order %(id)") % {'id': self.id}
     
     def get_total_cost_before_discount(self):
         return sum(item.get_cost() for item in self.items.all())
